@@ -1,1 +1,5 @@
-Week 9 Utils folder is created. Data exploration and preprocessing steps are shown in exploration.ipynb. Dataset folder is added to repository.
+Week 9 
+	- Utils folder is created.  
+	- Data exploration and preprocessing steps are shown in exploration.ipynb.
+	- Dataset folder is added to repository.
+	- Plotting modules added for analyze dataset well.
