@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
+from sklearn.preprocessing import LabelEncoder
+
 
 def isCategorical(df, col, threshold):
     """
@@ -33,3 +35,26 @@ def isNumerical(df, col):
         return True
     else:
         return False
+
+def labelEncoding(df, col):
+    """
+    This function encodes categorical columns
+    :param df: dataframe
+    :param col: column name
+    :return: encoded column if inverse=False, decoded column if inverse=True
+    """
+
+    le = LabelEncoder()
+
+    return le.fit_transform(df[col])
+    
+
+def oneHotEncoding(df, col):
+    """
+    This function encodes categorical columns
+    :param df: dataframe
+    :param col: column name
+    :return: encoded column if inverse=False, decoded column if inverse=True
+    """
+
+    return pd.get_dummies(df[col], prefix=col)
