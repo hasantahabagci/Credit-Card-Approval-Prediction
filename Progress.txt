@@ -18,4 +18,4 @@ Week 11
 Week 12
 	- Implemented all models and analyzed them.
 	- Edited README.md file.
-	Created requirements.txt file.
+	- Created requirements.txt file.
