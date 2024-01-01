@@ -15,7 +15,7 @@ from xgboost import XGBClassifier
 
 from imblearn.over_sampling import SMOTE
 
-def gridSearch(model, param_grid, X_train, y_train, cv=5, scoring='accuracy'):
+def gridSearch(model, param_grid, X_train, y_train, cv=2, scoring='accuracy', model_name= 'model_name'):
     """
     This function performs grid search
     :param model: model
@@ -29,6 +29,10 @@ def gridSearch(model, param_grid, X_train, y_train, cv=5, scoring='accuracy'):
 
     grid = GridSearchCV(model, param_grid, cv=cv, scoring=scoring)
     grid.fit(X_train, y_train)
+
+    print("Best parameters for ", model_name, ": ", grid.best_params_)
+    print("Best score for ", model_name, ": ", grid.best_score_)
+    print("Best estimator for ", model_name, ": ", grid.best_estimator_)
 
 
     return grid
@@ -232,7 +236,7 @@ def plotlearningcurve(model, X_train, y_train, figsize=(5, 3)):
     :param y_train: training labels
     :return: None
     """
-    train_sizes, train_scores, test_scores = learning_curve(model, X_train, y_train, cv=5, scoring='accuracy')
+    train_sizes, train_scores, test_scores = learning_curve(model, X_train, y_train, cv=2, scoring='accuracy')
 
     plt.figure(figsize=figsize)
     plt.plot(train_sizes, train_scores.mean(axis=1), label='train')
@@ -240,7 +244,7 @@ def plotlearningcurve(model, X_train, y_train, figsize=(5, 3)):
     plt.legend()
     plt.show()
 
-def plotValidationCurve(model, param_name, param_range, X_train, y_train, figsize=(5, 3)):
+def plotValidationCurve(model, X_train, y_train, param_name, param_range, figsize=(5, 3)):
     """
     This function plots the validation curve
     :param model: trained model
@@ -250,7 +254,7 @@ def plotValidationCurve(model, param_name, param_range, X_train, y_train, figsiz
     :param y_train: training labels
     :return: None
     """
-    train_scores, test_scores = validation_curve(model, X_train, y_train, param_name=param_name, param_range=param_range, cv=5, scoring='accuracy')
+    train_scores, test_scores = validation_curve(model, X_train, y_train, param_name=param_name, param_range=param_range, cv=2, scoring='accuracy')
 
     plt.figure(figsize=figsize)
     plt.plot(param_range, train_scores.mean(axis=1), label='train')
