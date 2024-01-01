@@ -3,3 +3,19 @@ Week 9
 	- Data exploration and preprocessing steps are shown in exploration.ipynb.
 	- Dataset folder is added to repository.
 	- Plotting modules added for analyze dataset well.
+
+Week 10
+	- Data preprocessing proccess is continued.
+	- Intermediate report is prepared.
+	- Created python files for preprocessing steps and plotting.
+
+Week 11
+	- Data preprocessing is completed.
+	- Data preprocessing steps are shown in preprocessing.ipynb.
+	- Dataset folder is created for storing preprocessed data.
+	- Created python file for models and implemented plots to analyze.
+
+Week 12
+	- Implemented all models and analyzed them.
+	- Edited README.md file.
+	Created requirements.txt file.
