@@ -1,19 +1,16 @@
-import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 from sklearn.metrics import mean_squared_error, accuracy_score, recall_score, precision_score, f1_score, roc_auc_score, roc_curve, auc, precision_recall_curve, confusion_matrix
 from sklearn.model_selection import learning_curve, GridSearchCV, validation_curve
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.linear_model import LogisticRegression
 from xgboost import XGBClassifier
 
-
-
 from imblearn.over_sampling import SMOTE
+
+
 
 def gridSearch(model, param_grid, X_train, y_train, cv=2, scoring='accuracy', model_name= 'model_name'):
     """
